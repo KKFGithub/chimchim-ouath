@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SurveyMonkey OAuth Redirect</title>
+</head>
+<body>
+    <h2>Authenticating...</h2>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const code = params.get("code");
+
+        if (code) {
+            document.body.innerHTML = "<h2>Authorization Code Captured</h2><p>Code: " + code + "</p>";
+            console.log("Authorization Code:", code);
+        } else {
+            document.body.innerHTML = "<h2>Error: No Authorization Code Found</h2>";
+        }
+    </script>
+</body>
+</html>
